@@ -1,4 +1,4 @@
-# Статистика товаров — Anime Shop Simulator
+# Статистика товаров — мод для Anime Shop Simulator
 
 ![Anime Shop Simulator](https://img.shields.io/badge/Anime%20Shop%20Simulator-1.0.6-f6a800)
 ![Version](https://img.shields.io/badge/version-0.5.1-1685d1)
@@ -6,7 +6,7 @@
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-0.7.3-7952b3)
 ![License](https://img.shields.io/badge/license-MIT-2ea44f)
 
-**Статистика товаров** добавляет в игровой терминал отдельную страницу с продажами каждого товара.
+**Статистика товаров** — мод для **Anime Shop Simulator** на базе **MelonLoader** и **WolfCore**. Он добавляет в игровой терминал отдельную страницу с продажами каждого товара.
 
 Мод помогает понять, что покупают чаще, какие товары приносят больше денег и что стоит заказывать в большем количестве.
 
