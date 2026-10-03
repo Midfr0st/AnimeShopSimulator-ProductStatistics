@@ -15,7 +15,7 @@ using MelonLoader.Utils;
 using Newtonsoft.Json;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(WolfProductStatistics.ProductStatisticsMod), "Anime Shop: Product Statistics", "0.5.1", "WolfMods")]
+[assembly: MelonInfo(typeof(WolfProductStatistics.ProductStatisticsMod), "Anime Shop: Product Statistics", "0.5.2", "WolfMods")]
 
 namespace WolfProductStatistics;
 
@@ -69,7 +69,7 @@ public sealed class ProductStatisticsMod : MelonMod
         if (!WolfModBridge.TryRegister(
                 WolfModId,
                 "Статистика товаров",
-                "0.5.1",
+                "0.5.2",
                 "Продажи, выручка и расчётная прибыль по каждому товару.",
                 SetFeatureEnabled,
                 DrawWolfModSettings,
@@ -93,7 +93,7 @@ public sealed class ProductStatisticsMod : MelonMod
             StatisticsPatches.Install();
             _runtimeInitialized = true;
             LoggerInstance.Msg(
-                "Product Statistics 0.5.1 загружен. Терминальная вкладка передана WolfCore.");
+                "Product Statistics 0.5.2 загружен. Терминальная вкладка передана WolfCore.");
         }
         catch
         {

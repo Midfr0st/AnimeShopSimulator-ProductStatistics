@@ -1,7 +1,7 @@
 # Статистика товаров — мод для Anime Shop Simulator
 
-![Anime Shop Simulator](https://img.shields.io/badge/Anime%20Shop%20Simulator-1.0.6-f6a800)
-![Version](https://img.shields.io/badge/version-0.5.1-1685d1)
+![Anime Shop Simulator](https://img.shields.io/badge/Anime%20Shop%20Simulator-1.0.7-f6a800)
+![Version](https://img.shields.io/badge/version-0.5.2-1685d1)
 ![WolfCore](https://img.shields.io/badge/requires-WolfCore-1685d1)
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-0.7.3-7952b3)
 ![License](https://img.shields.io/badge/license-MIT-2ea44f)
@@ -15,6 +15,8 @@
 Готовая сборка находится в **[последнем выпуске](https://github.com/Midfr0st/AnimeShopSimulator-ProductStatistics/releases/latest)**.
 
 Для работы необходим [WolfCore](https://github.com/Midfr0st/AnimeShopSimulator-WolfCore).
+
+Описание исправлений: [история изменений](CHANGELOG.md).
 
 ## Возможности
 
@@ -50,9 +52,9 @@ Anime Shop Simulator\UserData\WolfProductStatistics.settings.json
 
 ## Совместимость
 
-- Anime Shop Simulator `1.0.6`;
+- Anime Shop Simulator `1.0.7`;
 - MelonLoader `0.7.3`;
-- WolfCore `0.2.5`;
+- WolfCore `0.2.6`;
 - Windows x64, Unity IL2CPP.
 
 ## Если что-то не работает

@@ -39,15 +39,15 @@ internal static class ProductStatisticsWindow
     private const string RootName = "WolfMod_ProductStatisticsSection";
     private const int VisibleRowCount = 6;
 
-    private static readonly Color PageColor = new(0.955f, 0.958f, 0.985f, 1f);
-    private static readonly Color Navy = new(0.16f, 0.18f, 0.34f, 1f);
+    private static readonly Color PageColor = new(0.955f, 0.950f, 0.995f, 0.94f);
+    private static readonly Color Navy = new(0.27f, 0.25f, 0.68f, 1f);
     private static readonly Color Muted = new(0.38f, 0.40f, 0.52f, 1f);
     private static readonly Color Green = new(0.07f, 0.55f, 0.22f, 1f);
     private static readonly Color Brown = new(0.57f, 0.36f, 0.16f, 1f);
     private static readonly Color Header = new(0.73f, 0.74f, 0.77f, 1f);
     private static readonly Color RowA = new(0.90f, 0.91f, 0.94f, 1f);
     private static readonly Color RowB = new(0.94f, 0.945f, 0.965f, 1f);
-    private static readonly Color ActiveTab = new(0.72f, 0.83f, 0.93f, 1f);
+    private static readonly Color ActiveTab = new(0.80f, 0.78f, 0.99f, 1f);
 
     private static ComputerWorldView? _view;
     private static GameObject? _panelTemplate;
@@ -127,7 +127,8 @@ internal static class ProductStatisticsWindow
 
         ReleaseTemplates();
         _view = view;
-        GameObject? textSource = view._levelText?.gameObject;
+        GameObject? textSource = view._employeeButton?.GetComponentInChildren<TextMeshProUGUI>(true)?.gameObject
+                                 ?? view._moneyText?.gameObject;
         GameObject? iconSource = view._employeeButton?.gameObject ?? view._ordersButton?.gameObject;
         GameObject? buttonSource = null;
         GameObject? panelSource = null;
@@ -203,9 +204,9 @@ internal static class ProductStatisticsWindow
         _snapshot = StatisticsStore.GetSnapshot();
 
         CreateText(_root.transform, "Title", "СТАТИСТИКА ТОВАРОВ",
-            new Vector2(0.03f, 0.825f), new Vector2(0.49f, 0.885f), 35f, FontStyles.Bold, TextAlignmentOptions.MidlineLeft, Navy);
+            new Vector2(0.22f, 0.825f), new Vector2(0.56f, 0.885f), 32f, FontStyles.Bold, TextAlignmentOptions.MidlineLeft, Navy);
         CreateText(_root.transform, "Subtitle", GetSubtitle(),
-            new Vector2(0.03f, 0.785f), new Vector2(0.54f, 0.825f), 20f, FontStyles.Normal, TextAlignmentOptions.MidlineLeft, Muted);
+            new Vector2(0.22f, 0.785f), new Vector2(0.56f, 0.825f), 18f, FontStyles.Normal, TextAlignmentOptions.MidlineLeft, Muted);
 
         CreatePeriodButton(StatisticsPeriod.CurrentDay, "ТЕКУЩИЙ ДЕНЬ", 0.57f, 0.695f);
         CreatePeriodButton(StatisticsPeriod.LastDay, "ПРОШЛЫЙ ДЕНЬ", 0.70f, 0.825f);
@@ -549,6 +550,11 @@ internal static class ProductStatisticsWindow
         clone.name = name;
         clone.hideFlags = HideFlags.DontSave;
         clone.SetActive(false);
+        foreach (var behaviour in clone.GetComponentsInChildren<MonoBehaviour>(true))
+        {
+            if (behaviour.GetIl2CppType().Name == "Localize")
+                behaviour.enabled = false;
+        }
         return clone;
     }
 
